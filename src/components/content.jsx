@@ -29,6 +29,8 @@ import BackendWeeks from '../assets/web-dev-be-card.png';
 import BackendTechStack from '../assets/web-dev-be-card-2.png';
 
 import FlipCard from './flipcard';
+
+import KelasFE from '../assets/kelas-fe1.JPG';
 import '../styles/style.css';
 
 const Content = () => {
@@ -138,8 +140,81 @@ const Content = () => {
             title={Card4}
           />
         </div>
-
       </section>
+
+<section className="w-full mb-32 px-4 md:px-0" data-aos="fade-right" data-aos-delay="300">
+  <div className="max-w-6xl ml-40 mx-auto flex flex-col md:flex-row gap-10">
+    
+    {/* === KIRI: TEKS + GAMBAR INTERAKTIF === */}
+    <div className="flex-1 space-y-6 -ml-4">
+      {/* Teks */}
+      <div className="max-w-xl text-left">
+        <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">
+          Pilih Program Belajarmu Bersama Kami!
+        </h3>
+        <p className="text-base md:text-lg text-gray-200 leading-relaxed">
+          Kami memberikan pembelajaran, serta pelatihan yang kamu butuhkan sesuai dengan kurikulum kampus dan industri digital.
+        </p>
+      </div>
+
+      {/* Gambar Web Development */}
+      <div className="relative w-[600px] h-[200px] rounded-xl overflow-hidden group shadow-lg cursor-pointer">
+        <img
+          src={KelasFE}
+          alt="Web Development"
+          className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+        />
+        <div className="absolute inset-0 bg-gradient-to-l from-black/80 via-black/40 to-transparent z-10" />
+        <div className="absolute top-1/2 right-6 transform -translate-y-1/2 z-20 text-white text-right w-[250px]">
+          <h4 className="text-xl md:text-2xl font-bold">Web Development</h4>
+          <p className="text-sm md:text-base mt-2 leading-snug opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
+            Belajar membangun website dari frontend hingga backend dengan teknologi modern.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    {/* === KANAN: 2 GAMBAR === */}
+    <div className="flex flex-col gap-6 flex-1 items-end">
+      
+      {/* Mobile Development */}
+      <div className="relative w-[600px] h-[200px] rounded-xl overflow-hidden group shadow-lg cursor-pointer">
+        <img
+          src={KelasFE}
+          alt="Mobile Development"
+          className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+        />
+        <div className="absolute inset-0 bg-gradient-to-l from-black/80 via-black/40 to-transparent z-10" />
+        <div className="absolute top-1/2 right-6 transform -translate-y-1/2 z-20 text-white text-right w-[250px]">
+          <h4 className="text-xl md:text-2xl font-bold">Mobile Development</h4>
+          <p className="text-sm md:text-base mt-2 leading-snug opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
+            Bangun aplikasi mobile Android/iOS dengan Flutter & React Native.
+          </p>
+        </div>
+      </div>
+
+      {/* Cyber Security */}
+      <div className="relative w-[600px] h-[200px] rounded-xl overflow-hidden group shadow-lg cursor-pointer">
+        <img
+          src={KelasFE}
+          alt="Cyber Security"
+          className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+        />
+        <div className="absolute inset-0 bg-gradient-to-l from-black/80 via-black/40 to-transparent z-10" />
+        <div className="absolute top-1/2 right-6 transform -translate-y-1/2 z-20 text-white text-right w-[250px]">
+          <h4 className="text-xl md:text-2xl font-bold">Cyber Security</h4>
+          <p className="text-sm md:text-base mt-2 leading-snug opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
+            Pelajari dasar keamanan sistem, ethical hacking, dan analisis risiko.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
 
       {/* Call to Action */}
       <section
