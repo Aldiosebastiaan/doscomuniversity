@@ -1,31 +1,38 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation, Pagination, EffectCoverflow } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 import background21 from '../assets/bg21.png';
-import coverImage from '../assets/cover_du.png';
 import OurProgram from '../assets/Our_program.png';
-import Regist from '../assets/Regist.png';
-import Timeline from '../assets/Timeline.png';
+import BgWeb from '../assets/bg_web_du.png';
+
+import Img1 from '../assets/web-dev-fe.png';
+import Img2 from '../assets/web-dev-be.png';
+import Img3 from '../assets/mobile-dev.png';
+import Img4 from '../assets/cyber-sec.png';
+
+import '../styles/custom-swiper.css';
 
 const Content = () => {
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
 
-  const cardStyle =
-    'relative bg-gray-100 p-6 rounded-xl shadow-md transition-all duration-500 ease-in-out hover:shadow-2xl hover:scale-105 hover:bg-indigo-100';
+  const baseImages = [Img1, Img2, Img3, Img4];
+  const images = Array.from({ length: 10 }, () => baseImages).flat(); // 4 x 5 = 20 slide
+
 
   return (
-    <main className="text-gray-800 bg-white">
-      {/* Cover Image Section */}
-      <section className="w-full h-auto">
-        <img
-          src={coverImage}
-          alt="Doscom University Cover"
-          className="w-full object-cover"
-        />
-      </section>
-
+    <main
+      className="relative text-white bg-cover bg-no-repeat bg-[top_30%] min-h-screen pt-[300px]"
+      style={{ backgroundImage: `url(${BgWeb})` }}
+    >
       {/* Konten Utama */}
       <section className="max-w-5xl mx-auto px-6 py-20" data-aos="fade-up">
         <h2 className="text-4xl font-bold text-center mb-6">
@@ -35,46 +42,62 @@ const Content = () => {
           Bootcamp ini ditujukan bagi pemula maupun intermediate yang ingin belajar tentang Web Development, Mobile Development, dan pengembangan aplikasi secara kolaboratif dengan mentor dari Doscom.
         </p>
 
-        {/* Cards with Icons */}
-        <div className="grid md:grid-cols-3 gap-10">
-          {/* Card 1 - Web Dev */}
-          <div className={cardStyle} data-aos="fade-right">
-            <img
-              src={OurProgram}
-              alt="Our Program"
-              className="absolute -top-14 left-1/2 transform -translate-x-1/2 w-40"
-            />
-            <h3 className="text-xl font-semibold mt-12 mb-2 text-center">Web Development</h3>
-            <p className="text-center">
-              Belajar HTML, CSS, JavaScript hingga framework modern seperti ReactJS.
-            </p>
-          </div>
+        {/* Gambar OurProgram */}
+        <div
+          className="flex justify-center mb-12"
+          data-aos="zoom-in"
+          data-aos-delay="300"
+        >
+          <img
+            src={OurProgram}
+            alt="Our Program"
+            className="max-w-[400px] h-auto rounded-lg shadow-lg transition-transform duration-700 hover:scale-110 hover:shadow-2xl"
+          />
+        </div>
 
-          {/* Card 2 - Mobile Dev */}
-          <div className={cardStyle} data-aos="fade-up">
-            <img
-              src={Timeline}
-              alt="Timeline"
-              className="absolute -top-14 left-1/2 transform -translate-x-1/2 w-32"
-            />
-            <h3 className="text-xl font-semibold mt-12 mb-2 text-center">Mobile Development</h3>
-            <p className="text-center">
-              Belajar prinsip dasar Dart dan penggunaan framework seperti Kotlin dan Flutter.
-            </p>
-          </div>
+        {/* Swiper Carousel */}
+        <div className="w-full flex justify-center mb-20" data-aos="fade-up" data-aos-delay="400">
+          <Swiper
+            modules={[EffectCoverflow, Navigation, Pagination, Autoplay]}
+            effect="coverflow"
+            grabCursor={true}
+            centeredSlides={true}
+            slidesPerView="auto"
+            loop={true}
+            autoplay={{
+              delay: 2000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: false,
+              stopOnLastSlide: false,
+            }}
+            pagination={{
+              clickable: true,
+              renderBullet: (index, className) => {
+                return `<span class="${className}"></span>`;
+              },
+            }}
+            navigation
+            coverflowEffect={{
+              rotate: 30,
+              stretch: 0,
+              depth: 100,
+              modifier: 1,
+              slideShadows: true,
+            }}
+            className="w-full max-w-5xl rounded-xl"
+          >
+            {images.map((img, index) => (
+              <SwiperSlide key={index} className="w-[300px]">
+                <img
+                  src={img}
+                  alt={`slide-${index}`}
+                  className="rounded-xl object-cover w-full h-auto"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
 
-          {/* Card 3 - Project */}
-          <div className={cardStyle} data-aos="fade-left">
-            <img
-              src={Regist}
-              alt="Registration"
-              className="absolute -top-14 left-1/2 transform -translate-x-1/2 w-36"
-            />
-            <h3 className="text-xl font-semibold mt-12 mb-2 text-center">Project Kolaboratif</h3>
-            <p className="text-center">
-              Gabung tim, buat proyek nyata, dan latih softskill kerja sama tim secara nyata.
-            </p>
-          </div>
+
         </div>
       </section>
 

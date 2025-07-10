@@ -1,0 +1,26 @@
+.swiper-slide {
+  width: 250px;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  transform: scale(0.8);
+  opacity: 0.5;
+}
+
+.swiper-slide-active {
+  transform: scale(1);
+  opacity: 1;
+  z-index: 2;
+}
+
+.swiper-slide-prev,
+.swiper-slide-next {
+  transform: scale(0.9);
+  opacity: 0.8;
+  z-index: 1;
+}
+
+.swiper-pagination-bullet {
+  display: none;
+}
+.swiper-pagination-bullet:nth-child(-n+4) {
+  display: inline-block;
+}
