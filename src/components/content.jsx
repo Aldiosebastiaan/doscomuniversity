@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination, EffectCoverflow } from 'swiper/modules';
-
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -17,7 +17,19 @@ import Img2 from '../assets/web-dev-be.png';
 import Img3 from '../assets/mobile-dev.png';
 import Img4 from '../assets/cyber-sec.png';
 
-import '../styles/custom-swiper.css';
+import Card1 from '../assets/judul_card1.png';
+import Card2 from '../assets/judul_card2.png';
+import Card3 from '../assets/judul_card3.png';
+import Card4 from '../assets/judul_card4.png';
+
+import FrontendWeeks from '../assets/web-dev-fe-card.png';
+import FrontendTechStack from '../assets/web-dev-fe-card-2.png';
+
+import BackendWeeks from '../assets/web-dev-be-card.png';
+import BackendTechStack from '../assets/web-dev-be-card-2.png';
+
+import FlipCard from './flipcard';
+import '../styles/style.css';
 
 const Content = () => {
   useEffect(() => {
@@ -25,15 +37,21 @@ const Content = () => {
   }, []);
 
   const baseImages = [Img1, Img2, Img3, Img4];
-  const images = Array.from({ length: 10 }, () => baseImages).flat(); // 4 x 5 = 20 slide
+  const images = Array.from({ length: 20 }, () => baseImages).flat();
+
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  const toggleFlip = () => {
+    setIsFlipped(!isFlipped);
+  };
 
 
   return (
     <main
-      className="relative text-white bg-cover bg-no-repeat bg-[top_30%] min-h-screen pt-[300px]"
+      className="relative text-white min-h-screen pt-[300px] overflow-hidden bg-top bg-no-repeat bg-cover"
       style={{ backgroundImage: `url(${BgWeb})` }}
     >
-      {/* Konten Utama */}
+
       <section className="max-w-5xl mx-auto px-6 py-20" data-aos="fade-up">
         <h2 className="text-4xl font-bold text-center mb-6">
           Selamat Datang di Doscom University
@@ -42,7 +60,6 @@ const Content = () => {
           Bootcamp ini ditujukan bagi pemula maupun intermediate yang ingin belajar tentang Web Development, Mobile Development, dan pengembangan aplikasi secara kolaboratif dengan mentor dari Doscom.
         </p>
 
-        {/* Gambar OurProgram */}
         <div
           className="flex justify-center mb-12"
           data-aos="zoom-in"
@@ -55,7 +72,7 @@ const Content = () => {
           />
         </div>
 
-        {/* Swiper Carousel */}
+        {/* Carousel */}
         <div className="w-full flex justify-center mb-20" data-aos="fade-up" data-aos-delay="400">
           <Swiper
             modules={[EffectCoverflow, Navigation, Pagination, Autoplay]}
@@ -65,7 +82,7 @@ const Content = () => {
             slidesPerView="auto"
             loop={true}
             autoplay={{
-              delay: 2000,
+              delay: 2500,
               disableOnInteraction: false,
               pauseOnMouseEnter: false,
               stopOnLastSlide: false,
@@ -96,12 +113,35 @@ const Content = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-
-
         </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 max-w-4xl mx-auto mb-24" data-aos="fade-up" data-aos-delay="500">
+
+          <FlipCard
+            frontImage={FrontendTechStack}
+            backImage={FrontendWeeks}
+            title={Card1}
+          />
+          <FlipCard
+            frontImage={BackendTechStack}
+            backImage={BackendWeeks}
+            title={Card2}
+          />
+          <FlipCard
+            frontImage={BackendTechStack}
+            backImage={BackendWeeks}
+            title={Card3}
+          />
+          <FlipCard
+            frontImage={BackendTechStack}
+            backImage={BackendWeeks}
+            title={Card4}
+          />
+        </div>
+
       </section>
 
-      {/* Section Ajak Daftar */}
+      {/* Call to Action */}
       <section
         className="shadow-lg bg-cover bg-no-repeat bg-center min-h-[200px]"
         style={{ backgroundImage: `url(${background21})` }}
