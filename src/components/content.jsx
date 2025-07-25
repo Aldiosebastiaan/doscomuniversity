@@ -54,8 +54,8 @@ const Content = () => {
       style={{ backgroundImage: `url(${BgWeb})` }}
     >
 
-      <section className="max-w-5xl mx-auto px-6 py-20" data-aos="fade-up">
-        <h2 className="text-4xl font-bold text-center mb-6">
+      <section className="max-w-5xl mx-auto px-6 py-10" data-aos="fade-up">
+        <h2 className="text-4xl mt-25 font-bold text-center mb-6">
           Selamat Datang di Doscom University
         </h2>
         <p className="text-lg text-center mb-10 max-w-3xl mx-auto">
@@ -117,7 +117,7 @@ const Content = () => {
           </Swiper>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 max-w-4xl mx-auto mb-24" data-aos="fade-up" data-aos-delay="500">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 max-w-4xl mx-auto mb-0" data-aos="fade-up" data-aos-delay="500">
 
           <FlipCard
             frontImage={FrontendTechStack}
@@ -142,101 +142,208 @@ const Content = () => {
         </div>
       </section>
 
-<section className="w-full mb-32 px-4 md:px-0" data-aos="fade-right" data-aos-delay="300">
-  <div className="max-w-6xl ml-40 mx-auto flex flex-col md:flex-row gap-10">
-    
-    {/* === KIRI: TEKS + GAMBAR INTERAKTIF === */}
-    <div className="flex-1 space-y-6 -ml-4">
-      {/* Teks */}
-      <div className="max-w-xl text-left">
-        <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">
-          Pilih Program Belajarmu Bersama Kami!
-        </h3>
-        <p className="text-base md:text-lg text-gray-200 leading-relaxed">
-          Kami memberikan pembelajaran, serta pelatihan yang kamu butuhkan sesuai dengan kurikulum kampus dan industri digital.
-        </p>
-      </div>
-
-      {/* Gambar Web Development */}
-      <div className="relative w-[600px] h-[200px] rounded-xl overflow-hidden group shadow-lg cursor-pointer">
-        <img
-          src={KelasFE}
-          alt="Web Development"
-          className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
-        />
-        <div className="absolute inset-0 bg-gradient-to-l from-black/80 via-black/40 to-transparent z-10" />
-        <div className="absolute top-1/2 right-6 transform -translate-y-1/2 z-20 text-white text-right w-[250px]">
-          <h4 className="text-xl md:text-2xl font-bold">Web Development</h4>
-          <p className="text-sm md:text-base mt-2 leading-snug opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
-            Belajar membangun website dari frontend hingga backend dengan teknologi modern.
+      <section className="w-full mb-0 px-4 md:px-0" data-aos="fade-right" data-aos-delay="300">
+        <div className="max-w-6xl mx-auto px-4 py-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-white mb-4">
+            Pilih Program Belajarmu Bersama Kami!
+          </h2>
+          <p className="text-center text-gray-300 mb-10 max-w-2xl mx-auto">
+            Kami memberikan pembelajaran serta pelatihan yang kamu butuhkan sesuai dengan kurikulum kampus dan industri digital.
           </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Frontend Development */}
+            <div className="relative w-full h-[220px] rounded-xl overflow-hidden group shadow-lg cursor-pointer">
+              <img
+                src={KelasFE}
+                alt="Frontend Development"
+                className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-l from-black/80 via-black/40 to-transparent z-10" />
+              <div className="absolute top-1/2 right-6 transform -translate-y-1/2 z-20 text-white text-right w-[250px]">
+                <h4 className="text-xl md:text-2xl font-bold">Frontend Development</h4>
+                <p className="text-sm md:text-base mt-2 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
+                  Bangun UI modern dengan HTML, CSS, JS, dan React.
+                </p>
+              </div>
+            </div>
+
+            {/* Backend Development */}
+            <div className="relative w-full h-[220px] rounded-xl overflow-hidden group shadow-lg cursor-pointer">
+              <img
+                src={KelasFE}
+                alt="Backend Development"
+                className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-l from-black/80 via-black/40 to-transparent z-10" />
+              <div className="absolute top-1/2 right-6 transform -translate-y-1/2 z-20 text-white text-right w-[250px]">
+                <h4 className="text-xl md:text-2xl font-bold">Backend Development</h4>
+                <p className="text-sm md:text-base mt-2 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
+                  Bangun API, sistem auth, database, dan server.
+                </p>
+              </div>
+            </div>
+
+            {/* Mobile Development */}
+            <div className="relative w-full h-[220px] rounded-xl overflow-hidden group shadow-lg cursor-pointer">
+              <img
+                src={KelasFE}
+                alt="Mobile Development"
+                className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-l from-black/80 via-black/40 to-transparent z-10" />
+              <div className="absolute top-1/2 right-6 transform -translate-y-1/2 z-20 text-white text-right w-[250px]">
+                <h4 className="text-xl md:text-2xl font-bold">Mobile Development</h4>
+                <p className="text-sm md:text-base mt-2 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
+                  Kembangkan aplikasi Android/iOS menggunakan Flutter atau React Native.
+                </p>
+              </div>
+            </div>
+
+            {/* Cyber Security */}
+            <div className="relative w-full h-[220px] rounded-xl overflow-hidden group shadow-lg cursor-pointer">
+              <img
+                src={KelasFE}
+                alt="Cyber Security"
+                className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-l from-black/80 via-black/40 to-transparent z-10" />
+              <div className="absolute top-1/2 right-6 transform -translate-y-1/2 z-20 text-white text-right w-[250px]">
+                <h4 className="text-xl md:text-2xl font-bold">Cyber Security</h4>
+                <p className="text-sm md:text-base mt-2 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
+                  Pelajari keamanan siber, penetration testing, dan ethical hacking.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-
-    {/* === KANAN: 2 GAMBAR === */}
-    <div className="flex flex-col gap-6 flex-1 items-end">
-      
-      {/* Mobile Development */}
-      <div className="relative w-[600px] h-[200px] rounded-xl overflow-hidden group shadow-lg cursor-pointer">
-        <img
-          src={KelasFE}
-          alt="Mobile Development"
-          className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
-        />
-        <div className="absolute inset-0 bg-gradient-to-l from-black/80 via-black/40 to-transparent z-10" />
-        <div className="absolute top-1/2 right-6 transform -translate-y-1/2 z-20 text-white text-right w-[250px]">
-          <h4 className="text-xl md:text-2xl font-bold">Mobile Development</h4>
-          <p className="text-sm md:text-base mt-2 leading-snug opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
-            Bangun aplikasi mobile Android/iOS dengan Flutter & React Native.
-          </p>
-        </div>
-      </div>
-
-      {/* Cyber Security */}
-      <div className="relative w-[600px] h-[200px] rounded-xl overflow-hidden group shadow-lg cursor-pointer">
-        <img
-          src={KelasFE}
-          alt="Cyber Security"
-          className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
-        />
-        <div className="absolute inset-0 bg-gradient-to-l from-black/80 via-black/40 to-transparent z-10" />
-        <div className="absolute top-1/2 right-6 transform -translate-y-1/2 z-20 text-white text-right w-[250px]">
-          <h4 className="text-xl md:text-2xl font-bold">Cyber Security</h4>
-          <p className="text-sm md:text-base mt-2 leading-snug opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
-            Pelajari dasar keamanan sistem, ethical hacking, dan analisis risiko.
-          </p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
 
 
+      </section>
 
 
-      {/* Call to Action */}
-      <section
-        className="shadow-lg bg-cover bg-no-repeat bg-center min-h-[200px]"
-        style={{ backgroundImage: `url(${background21})` }}
-        data-aos="fade-up"
-      >
-        <div className="bg-opacity-60">
-          <div className="max-w-3xl mx-auto text-center py-10">
-            <h2 className="text-3xl font-bold mb-4 text-white">Ayo Bergabung!</h2>
-            <p className="mb-6 text-white">
-              Tingkatkan skillmu bersama komunitas belajar yang positif dan produktif.
-            </p>
-            <a
-              href="/daftar"
-              className="bg-gradient-to-r from-indigo-400 to-violet-600 text-white px-6 py-3 rounded-lg text-lg font-semibold shadow-lg hover:shadow-xl transition hover:from-blue-600 hover:to-purple-700"
-            >
-              Daftar Sekarang
-            </a>
+      <section className="max-w-6xl mx-auto px-6 mt-10 text-white" data-aos="fade-up">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Silabus & Timeline per Kelas</h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          {/* FRONTEND */}
+          <div className="bg-[#1e1e2f] rounded-xl p-6 shadow-md border border-indigo-500" data-aos="fade-up" data-aos-delay="100">
+            <h3 className="text-2xl font-semibold text-indigo-400 mb-4">Web Development - Frontend</h3>
+            <ul className="space-y-4">
+              <li><strong>Pembukaan:</strong> Orientasi & pengenalan Git, VS Code, struktur project</li>
+              <li><strong>Minggu 1:</strong> HTML, CSS, Responsive Layout, TailwindCSS</li>
+              <li><strong>Minggu 2:</strong> JavaScript dasar, DOM, Event, API fetch</li>
+              <li><strong>Minggu 3:</strong> ReactJS, Komponen, Props, State, Routing</li>
+              <li><strong>Minggu 4:</strong> Mini Project: Landing Page + Blog App</li>
+              <li><strong>Penutupan:</strong> Presentasi Final Project & Evaluasi</li>
+            </ul>
+          </div>
+
+          {/* BACKEND */}
+          <div className="bg-[#1e1e2f] rounded-xl p-6 shadow-md border border-purple-500" data-aos="fade-up" data-aos-delay="200">
+            <h3 className="text-2xl font-semibold text-purple-400 mb-4">Web Development - Backend</h3>
+            <ul className="space-y-4">
+              <li><strong>Pembukaan:</strong> Pengenalan backend, terminal, Git, struktur folder</li>
+              <li><strong>Minggu 1:</strong> PHP dasar, Routing, MVC dengan CodeIgniter 4</li>
+              <li><strong>Minggu 2:</strong> CRUD, MySQL, Validasi, Session</li>
+              <li><strong>Minggu 3:</strong> REST API, Postman, Integrasi FE</li>
+              <li><strong>Minggu 4:</strong> Final Project: API untuk sistem data</li>
+              <li><strong>Penutupan:</strong> Review, Best Practice & Final Evaluation</li>
+            </ul>
+          </div>
+
+          {/* MOBILE DEV */}
+          <div className="bg-[#1e1e2f] rounded-xl p-6 shadow-md border border-green-500" data-aos="fade-up" data-aos-delay="300">
+            <h3 className="text-2xl font-semibold text-green-400 mb-4">Mobile Development</h3>
+            <ul className="space-y-4">
+              <li><strong>Pembukaan:</strong> Pengenalan mobile dev, tools (Flutter/React Native)</li>
+              <li><strong>Minggu 1:</strong> Dart dasar / JSX Mobile, State Management</li>
+              <li><strong>Minggu 2:</strong> UI/UX Mobile, Form & Validation</li>
+              <li><strong>Minggu 3:</strong> HTTP Request, Integrasi API</li>
+              <li><strong>Minggu 4:</strong> Mini App Project: Todo List / Auth App</li>
+              <li><strong>Penutupan:</strong> Demo App & Feedback</li>
+            </ul>
+          </div>
+
+          {/* CYBER SECURITY */}
+          <div className="bg-[#1e1e2f] rounded-xl p-6 shadow-md border border-red-500" data-aos="fade-up" data-aos-delay="400">
+            <h3 className="text-2xl font-semibold text-red-400 mb-4">Cyber Security</h3>
+            <ul className="space-y-4">
+              <li><strong>Pembukaan:</strong> Pengenalan dunia keamanan digital & mindset security</li>
+              <li><strong>Minggu 1:</strong> Linux dasar, Command Line, Permissions</li>
+              <li><strong>Minggu 2:</strong> Network Security, Port Scanning, Wireshark</li>
+              <li><strong>Minggu 3:</strong> Web Vulnerabilities: SQLi, XSS, CSRF</li>
+              <li><strong>Minggu 4:</strong> Capture The Flag (CTF) Challenge Mini</li>
+              <li><strong>Penutupan:</strong> Evaluasi + Penghargaan</li>
+            </ul>
           </div>
         </div>
       </section>
+
+      {/*Footer*/}
+      <footer className="bg-[#0f172a] text-white pt-16 mt-10 pb-10 px-6" data-aos="fade-up">
+        <div className="max-w-6xl mx-auto text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Gabung Bersama Kami</h2>
+          <p className="text-lg md:text-xl text-gray-300">
+            Komunitas belajar teknologi yang aktif, kolaboratif, dan siap membantumu berkembang.
+          </p>
+        </div>
+
+        {/* Kontak */}
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 mb-12">
+          {/* Info Kontak */}
+          <div className="text-left">
+            <h3 className="text-2xl font-bold mb-4 text-indigo-400">Kontak Kami</h3>
+            <p className="mb-4 text-gray-300">
+              Ingin tahu lebih banyak tentang program kami atau ada pertanyaan seputar pendaftaran? Hubungi kami!
+            </p>
+            <ul className="space-y-2 text-gray-300">
+              <li>
+                📧 Email: <a href="mailto:doscom@gmail.com" className="text-indigo-400 hover:underline">doscom@gmail.com</a>
+              </li>
+              <li>
+                📱 WhatsApp: <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:underline">+62 812-3456-7890</a>
+              </li>
+              <li>
+                📍 Lokasi: Fakultas Ilmu Komputer, Universitas Dian Nuswantoro
+              </li>
+            </ul>
+          </div>
+
+          {/* Form Kontak */}
+          <div>
+            <h3 className="text-2xl font-bold mb-4 text-indigo-400">Kirim Pesan</h3>
+            <form className="space-y-4">
+              <input
+                type="text"
+                placeholder="Nama Lengkap"
+                className="w-full p-3 rounded-lg bg-[#1f2937] text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              />
+              <input
+                type="email"
+                placeholder="Alamat Email"
+                className="w-full p-3 rounded-lg bg-[#1f2937] text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              />
+              <textarea
+                rows="4"
+                placeholder="Pesanmu"
+                className="w-full p-3 rounded-lg bg-[#1f2937] text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              ></textarea>
+              <button
+                type="submit"
+                className="bg-indigo-600 hover:bg-indigo-700 transition-colors px-6 py-3 rounded-lg font-semibold text-white shadow-md"
+              >
+                Kirim
+              </button>
+            </form>
+          </div>
+        </div>
+
+        {/* Copyright */}
+        <div className="border-t border-gray-600 pt-6 text-center text-sm text-gray-400">
+          &copy; {new Date().getFullYear()} Doscom University. Made with 💙 by <a href="https://doscom.org" className="text-indigo-400 hover:underline">Doscom</a>
+        </div>
+      </footer>
     </main>
   );
 };
